@@ -1,8 +1,23 @@
-﻿
+﻿@using MVCDYNAMICPROJECT.Models.Entity
+@model List<TBLKATEGORILER>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
-
-<h2>Burası Kategorilerin Listeleneceği Sayfa Olacak</h2>
+<table class="table table-bordered">
+<tr>
+    <th>KATEGORI ID</th>
+    <th> KATEGORI ADI</th>
+    
+</tr>
+    <tbody>
+        @foreach (var ktgr in Model)
+            {
+                <tr>
+                    <th>@ktgr.KATEGORI</th>
+                    <td>@ktgr.KATEGORIAD</td>
+                </tr>
+            }
+    </tbody>
+</table>
 
