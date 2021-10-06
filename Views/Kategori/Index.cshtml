@@ -8,6 +8,8 @@
 <tr>
     <th>KATEGORI ID</th>
     <th> KATEGORI ADI</th>
+    <th>SİL</th>
+    <th>GÜNCELLE</th>
     
 </tr>
     <tbody>
@@ -16,8 +18,10 @@
                 <tr>
                     <th>@ktgr.KATEGORI</th>
                     <td>@ktgr.KATEGORIAD</td>
+                    <td><a href="/KATEGORI/SIL/@ktgr.KATEGORI" class=" btn btn-danger">SİL</a></td>
+                    <td><a href ="/KATEGORI/GUNCELLE/@ktgr.KATEGORI" class="btn btn-success">GÜNCELLE</a></td>
                 </tr>
             }
     </tbody>
 </table>
-
+<a href="/KATEGORI/YENIKATEGORI/" class="btn btn-primary">YENİ KATEGORİ EKLE</a>

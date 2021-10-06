@@ -12,22 +12,26 @@
         <th>MARKASI</th>
         <th>FİYAT</th>
         <th>STOK</th>
+        <th>SİL</th>
+        <th>GÜNELLE</th>
     </tr>
     <tbody>
-        @foreach(var urn in Model)
-            {
+        @foreach (var urn in Model)
+        {
 
-        <tr>
-            <th>@urn.URUNID</th>
-            <th>@urn.URUNAD</th>
-            <th>@urn.MARKA</th>
-            <th>@urn.FIYAT</th>
-            <th>@urn.STOK</th>
-          
-        </tr>
-            }
+            <tr>
+                <th>@urn.URUNID</th>
+                <th>@urn.URUNAD</th>
+                <th>@urn.MARKA</th>
+                <th>@urn.FIYAT</th>
+                <th>@urn.STOK</th>
+                <td><a href="/URUNLER/SIL/@urn.URUNID" class=" btn btn-danger">SİL</a></td>
+                <td><a href="/URUNLER/GUNCELLE/@urn.URUNAD" class="btn btn-success">GÜNCELLE</a></td>
+            </tr>
+        }
     </tbody>
 
 </table>
+<a href="/URUNLER/YENIURUN/" class="btn btn-primary">YENİ ÜRÜN EKLE</a>
 
 
