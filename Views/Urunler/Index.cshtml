@@ -1,0 +1,33 @@
+﻿@using MVCDYNAMICPROJECT.Models.Entity
+@model List<TBLURUNLER>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>ÜRÜN ID</th>
+        <th>ÜRÜN Adı</th>
+        <th>MARKASI</th>
+        <th>FİYAT</th>
+        <th>STOK</th>
+    </tr>
+    <tbody>
+        @foreach(var urn in Model)
+            {
+
+        <tr>
+            <th>@urn.URUNID</th>
+            <th>@urn.URUNAD</th>
+            <th>@urn.MARKA</th>
+            <th>@urn.FIYAT</th>
+            <th>@urn.STOK</th>
+          
+        </tr>
+            }
+    </tbody>
+
+</table>
+
+
