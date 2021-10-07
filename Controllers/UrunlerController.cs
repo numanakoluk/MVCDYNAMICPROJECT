@@ -22,6 +22,14 @@ namespace MVCDYNAMICPROJECT.Controllers
         [HttpGet]
         public ActionResult UrunEkle()
         {
+            List<SelectListItem> degerler = (from i in db.TBLKATEGORILER.ToList()
+                                             select new SelectListItem
+                                             {
+                                                 Text = i.KATEGORIAD,
+                                                 Value = i.KATEGORI.ToString()
+                                             }).ToList();
+            ViewBag.dgr = degerler;
+
             return View();
         }
         [HttpPost]
