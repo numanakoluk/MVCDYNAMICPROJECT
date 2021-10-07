@@ -1,4 +1,4 @@
-﻿@model MVCDYNAMICPROJECT.Models.Entity.TBLKATEGORILER
+﻿@model MVCDYNAMICPROJECT.Models.Entity.TBLURUNLER
 @{
     ViewBag.Title = "UrunEkle";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
@@ -15,7 +15,7 @@
     </div>
     <div>
         <label>Kategori Seçiniz</label>
-        @Html.DropDownListFor(m=>m.KATEGORIAD, (List<SelectListItem>)ViewBag.dgr, new {@class="form-control"})
+        @Html.DropDownListFor(m=>m.TBLKATEGORILER.KATEGORI,(List<SelectListItem>)ViewBag.dgr, new {@class="form control"})
     </div>
     <div>
         <label>Fiyatı</label>
