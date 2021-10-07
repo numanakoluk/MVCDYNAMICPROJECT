@@ -17,5 +17,19 @@ namespace MVCDYNAMICPROJECT.Controllers
 
             return View(kategoriler);
         }
+
+        [HttpGet]
+        public ActionResult YeniKategori()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult YeniKategori(TBLKATEGORILER p1)
+        {
+            db.TBLKATEGORILER.Add(p1);
+            db.SaveChanges();
+            return View();
+        }
     }
 }
