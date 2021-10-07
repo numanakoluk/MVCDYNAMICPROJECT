@@ -38,5 +38,10 @@ namespace MVCDYNAMICPROJECT.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult KategoriGetir(int id)
+        {
+            var ktgr = db.TBLKATEGORILER.Find(id);
+            return View("KategoriGetir", ktgr);
+        }
     }
 }
