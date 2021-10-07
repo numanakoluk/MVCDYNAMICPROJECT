@@ -42,5 +42,12 @@ namespace MVCDYNAMICPROJECT.Controllers
             return RedirectToAction("Index");
 
         }
+        public ActionResult SIL(int id)
+        {
+            var URUNLER = db.TBLURUNLER.Find(id);
+            db.TBLURUNLER.Remove(URUNLER);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
