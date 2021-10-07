@@ -19,5 +19,17 @@ namespace MVCDYNAMICPROJECT.Controllers
                
             return View(urunler);
         }
+        [HttpGet]
+        public ActionResult UrunEkle()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult UrunEkle(TBLURUNLER p1)
+        {
+            db.TBLURUNLER.Add(p1);
+            db.SaveChanges();
+            return View();
+        }
     }
 }
