@@ -73,6 +73,8 @@ namespace MVCDYNAMICPROJECT.Controllers
             urun.STOK = p.STOK;
             urun.FIYAT = p.FIYAT;
             //urun.URUNKATEGORI = p.URUNKATEGORI;
+            var ktg = db.TBLKATEGORILER.Where(m => m.KATEGORI == p.TBLKATEGORILER.KATEGORI).FirstOrDefault();
+            urun.URUNKATEGORI = ktg.KATEGORI;
             db.SaveChanges();
             return RedirectToAction("Index");
 
