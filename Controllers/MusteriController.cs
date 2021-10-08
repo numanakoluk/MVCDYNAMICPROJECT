@@ -36,5 +36,12 @@ namespace MVCDYNAMICPROJECT.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult MusteriGetir(int id)
+        {
+            var mus = db.TBLMUSTERILER.Find(id);
+            return View("MusteriGetir", mus);
+
+
+        }
     }
 }

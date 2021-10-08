@@ -43,5 +43,14 @@ namespace MVCDYNAMICPROJECT.Controllers
             var ktgr = db.TBLKATEGORILER.Find(id);
             return View("KategoriGetir", ktgr);
         }
+        public ActionResult Guncelle(TBLKATEGORILER p1)
+        {
+            var ktg = db.TBLKATEGORILER.Find(p1.KATEGORI);
+            ktg.KATEGORIAD = p1.KATEGORIAD;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+
+
+        }
     }
 }
