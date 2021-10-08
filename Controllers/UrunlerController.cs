@@ -65,5 +65,17 @@ namespace MVCDYNAMICPROJECT.Controllers
             return View("UrunGetir", urun);
 
         }
+        public ActionResult Guncelle(TBLURUNLER p)
+        {
+            var urun = db.TBLURUNLER.Find(p.URUNID);
+            urun.URUNAD = p.URUNAD;
+            urun.MARKA = p.MARKA;
+            urun.STOK = p.STOK;
+            urun.FIYAT = p.FIYAT;
+            //urun.URUNKATEGORI = p.URUNKATEGORI;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+
+        }
     }
 }
