@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MVCDYNAMICPROJECT.Models.Entity;
+using PagedList;
+using PagedList.Mvc;
+
 
 namespace MVCDYNAMICPROJECT.Controllers
 {
@@ -11,9 +14,10 @@ namespace MVCDYNAMICPROJECT.Controllers
     {
         // GET: Kategori
         MvcDbStokEntities db = new MvcDbStokEntities();
-        public ActionResult Index()
+        public ActionResult Index(int sayfa=1)
         {
-            var kategoriler = db.TBLKATEGORILER.ToList();
+            //var kategoriler = db.TBLKATEGORILER.ToList();
+            var kategoriler = db.TBLKATEGORILER.ToList().ToPagedList(sayfa, 4);
 
             return View(kategoriler);
         }
