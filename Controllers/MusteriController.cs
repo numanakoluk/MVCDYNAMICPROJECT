@@ -13,12 +13,16 @@ namespace MVCDYNAMICPROJECT.Controllers
     {
         // GET: Musteri
         MvcDbStokEntities db = new MvcDbStokEntities();
-        public ActionResult Index(int sayfa=1)
+        public ActionResult Index(string p)
         {
-            //var musteri = db.TBLMUSTERILER.ToList();
-            var musteri = db.TBLMUSTERILER.ToList().ToPagedList(sayfa, 4);
-
-            return View(musteri);
+            var degerler =from d in db.TBLMUSTERILER select d; 
+            if (!string.IsNullOrEmpty(p))
+            {
+                degerler = degerler.Where(m => m.MUSTERIAD.Contains(p));
+            }
+            return View(degerler.ToList());
+            //var musteri = db.TBLMUSTERILER.ToList();           
+            //return View(musteri);
         }
         [HttpGet]
         public ActionResult YeniMusteri()
