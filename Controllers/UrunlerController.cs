@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using MVCDYNAMICPROJECT.Models.Entity;
 
+
 namespace MVCDYNAMICPROJECT.Controllers
 {
     public class UrunlerController : Controller
@@ -16,7 +17,7 @@ namespace MVCDYNAMICPROJECT.Controllers
         public ActionResult Index()
         {
             var urunler = db.TBLURUNLER.ToList();
-               
+
             return View(urunler);
         }
         [HttpGet]

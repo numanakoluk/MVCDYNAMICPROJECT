@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MVCDYNAMICPROJECT.Models.Entity;
+using PagedList;
+using PagedList.Mvc;
 
 namespace MVCDYNAMICPROJECT.Controllers
 {
@@ -11,9 +13,10 @@ namespace MVCDYNAMICPROJECT.Controllers
     {
         // GET: Musteri
         MvcDbStokEntities db = new MvcDbStokEntities();
-        public ActionResult Index()
+        public ActionResult Index(int sayfa=1)
         {
-            var musteri = db.TBLMUSTERILER.ToList();
+            //var musteri = db.TBLMUSTERILER.ToList();
+            var musteri = db.TBLMUSTERILER.ToList().ToPagedList(sayfa, 4);
 
             return View(musteri);
         }
